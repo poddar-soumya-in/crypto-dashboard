@@ -1,0 +1,287 @@
+/* =========================
+   FONT SIZE UTILITIES
+   ========================= */
+.text-xs {
+  font-size: 0.75rem;
+} /* 12px */
+.text-sm {
+  font-size: 0.875rem;
+} /* 14px */
+.text-base {
+  font-size: 1rem;
+} /* 16px */
+.text-lg {
+  font-size: 1.125rem;
+} /* 18px */
+.text-xl {
+  font-size: 1.25rem;
+} /* 20px */
+.text-2xl {
+  font-size: 1.5rem;
+} /* 24px */
+.text-3xl {
+  font-size: 1.875rem;
+} /* 30px */
+.text-4xl {
+  font-size: 2.25rem;
+} /* 36px */
+
+/* =========================
+   FONT WEIGHT
+   ========================= */
+.font-thin {
+  font-weight: 100;
+}
+.font-light {
+  font-weight: 300;
+}
+.font-normal {
+  font-weight: 400;
+}
+.font-medium {
+  font-weight: 500;
+}
+.font-semibold {
+  font-weight: 600;
+}
+.font-bold {
+  font-weight: 700;
+}
+.font-extrabold {
+  font-weight: 800;
+}
+
+/* =========================
+   FONT STYLE
+   ========================= */
+.italic {
+  font-style: italic;
+}
+.not-italic {
+  font-style: normal;
+}
+
+/* =========================
+   TEXT DECORATION
+   ========================= */
+.underline {
+  text-decoration: underline;
+}
+.overline {
+  text-decoration: overline;
+}
+.line-through {
+  text-decoration: line-through;
+}
+.no-underline {
+  text-decoration: none;
+}
+
+/* =========================
+   TEXT TRANSFORM
+   ========================= */
+.uppercase {
+  text-transform: uppercase;
+}
+.lowercase {
+  text-transform: lowercase;
+}
+.capitalize {
+  text-transform: capitalize;
+}
+.normal-case {
+  text-transform: none;
+}
+
+/* =========================
+   TEXT ALIGNMENT
+   ========================= */
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-justify {
+  text-align: justify;
+}
+
+/* =========================
+   TEXT WRAP / OVERFLOW
+   ========================= */
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-wrap {
+  white-space: normal;
+}
+.text-nowrap {
+  white-space: nowrap;
+}
+
+/* =========================
+   LETTER SPACING
+   ========================= */
+.tracking-tight {
+  letter-spacing: -0.025em;
+}
+.tracking-normal {
+  letter-spacing: 0;
+}
+.tracking-wide {
+  letter-spacing: 0.025em;
+}
+.tracking-wider {
+  letter-spacing: 0.05em;
+}
+
+/* =========================
+   LINE HEIGHT
+   ========================= */
+.leading-none {
+  line-height: 1;
+}
+.leading-tight {
+  line-height: 1.25;
+}
+.leading-normal {
+  line-height: 1.5;
+}
+.leading-loose {
+  line-height: 2;
+}
+
+/* =========================
+   BORDER RADIUS (ROUNDNESS)
+   ========================= */
+.rounded-none {
+  border-radius: 0;
+}
+.rounded-sm {
+  border-radius: 0.125rem;
+} /* 2px */
+.rounded {
+  border-radius: 0.25rem;
+} /* 4px */
+.rounded-md {
+  border-radius: 0.375rem;
+} /* 6px */
+.rounded-lg {
+  border-radius: 0.5rem;
+} /* 8px */
+.rounded-xl {
+  border-radius: 0.75rem;
+} /* 12px */
+.rounded-2xl {
+  border-radius: 1rem;
+} /* 16px */
+.rounded-full {
+  border-radius: 9999px;
+}
+
+/* =========================
+   WIDTH UTILITIES
+   ========================= */
+.w-0 {
+  width: 0;
+}
+.w-1 {
+  width: 0.25rem;
+} /* 4px */
+.w-2 {
+  width: 0.5rem;
+} /* 8px */
+.w-4 {
+  width: 1rem;
+} /* 16px */
+.w-8 {
+  width: 2rem;
+} /* 32px */
+.w-16 {
+  width: 4rem;
+} /* 64px */
+.w-32 {
+  width: 8rem;
+} /* 128px */
+.w-48 {
+  width: 12rem;
+} /* 192px */
+.w-64 {
+  width: 16rem;
+} /* 256px */
+.w-1\/2 {
+  width: 50%;
+}
+.w-1\/3 {
+  width: 33.3333%;
+}
+.w-2\/3 {
+  width: 66.6667%;
+}
+.w-1\/4 {
+  width: 25%;
+}
+.w-2\/4 {
+  width: 50%;
+}
+.w-3\/4 {
+  width: 75%;
+}
+.w-1\/5 {
+  width: 20%;
+}
+.w-2\/5 {
+  width: 40%;
+}
+.w-3\/5 {
+  width: 60%;
+}
+.w-4\/5 {
+  width: 80%;
+}
+.w-full {
+  width: 100%;
+}
+.w-screen {
+  width: 100vw;
+}
+
+/* =========================
+   HEIGHT UTILITIES
+   ========================= */
+.h-0 {
+  height: 0;
+}
+.h-1 {
+  height: 0.25rem;
+} /* 4px */
+.h-2 {
+  height: 0.5rem;
+} /* 8px */
+.h-4 {
+  height: 1rem;
+} /* 16px */
+.h-8 {
+  height: 2rem;
+} /* 32px */
+.h-16 {
+  height: 4rem;
+} /* 64px */
+.h-32 {
+  height: 8rem;
+} /* 128px */
+.h-64 {
+  height: 16rem;
+} /* 256px */
+.h-full {
+  height: 100%;
+}
+.h-screen {
+  height: 100vh;
+}
