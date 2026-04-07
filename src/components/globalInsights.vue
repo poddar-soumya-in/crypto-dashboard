@@ -10,6 +10,12 @@
             </insightCard>
         </div>
         <div class="w-2/5 row">
+            <div class="col-6">
+                <listCard :list="trendingList" color="cyan" />
+            </div>
+            <div class="col-6">
+                <listCard :list="gainersList" color="amber" />
+            </div>
         </div>
     </div>
 </template>
@@ -18,6 +24,8 @@ import { computed, onMounted } from 'vue'
 
 import { useGlobalMarket } from 'src/composables/useGlobalMarket'
 import { useCoins } from 'src/composables/useCoins'
+
+import { useMarketInsights } from 'src/composables/useMarketInsights'
 
 const { globalData, fetchGlobalData, loading } = useGlobalMarket()
 const { coins, fetchCoins } = useCoins()
@@ -38,20 +46,6 @@ const insightMetric = [
         }
     },
     {
-        key: "btc_dominance",
-        label: "BTC Dominance",
-        icon: "pie_chart",
-        color: "orange",
-        getValue: (global) => global.market_cap_percentage.btc,
-        getChange: () => null,
-        format: (val) => `${val.toFixed(2)}%`,
-        getInsight: (val) => {
-            if (val > 50) return "BTC leading market";
-            if (val < 45) return "Altcoins gaining strength";
-            return "Balanced market";
-        }
-    },
-    {
         key: "volume",
         label: "24h Volume",
         icon: "bar_chart",
@@ -63,6 +57,20 @@ const insightMetric = [
             if (change > 30) return "High trading activity";
             if (change > 0) return "Moderate activity";
             return "Low participation";
+        }
+    },
+    {
+        key: "btc_dominance",
+        label: "BTC Dominance",
+        icon: "pie_chart",
+        color: "orange",
+        getValue: (global) => global.market_cap_percentage.btc,
+        getChange: () => null,
+        format: (val) => `${val.toFixed(2)}%`,
+        getInsight: (val) => {
+            if (val > 50) return "BTC leading market";
+            if (val < 45) return "Altcoins gaining strength";
+            return "Balanced market";
         }
     },
     {
@@ -127,9 +135,18 @@ const formatPercentage = (val) => {
     return `${val > 0 ? '+' : ''}${val.toFixed(2)}%`
 }
 
+const {
+  trendingList,
+  gainersList,
+  fetchTrending,
+  fetchTopGainers
+} = useMarketInsights()
+
 onMounted(() => {
     fetchGlobalData()
     fetchCoins()
+    fetchTrending()
+    fetchTopGainers()
 })
 
 </script>

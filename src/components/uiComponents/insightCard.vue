@@ -70,6 +70,7 @@ const trendConfig = {
 <style>
 .insight-card {
     box-shadow: none;
+    border-width: 1.5px;
     min-width: 250px;
 }
 
