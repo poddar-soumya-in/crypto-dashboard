@@ -1,6 +1,6 @@
 <template>
-    <div class="row q-gutter-x-sm">
-        <div class="w-3/5 row q-col-gutter-sm">
+    <div class="row ">
+        <div class="w-3/5 row q-col-gutter-sm q-pr-sm">
             <insightCard v-for="{ metric, key, color } in insightCards" :key="key" class="col-6" :metric="metric"
                 :color="color">
                 <q-circular-progress v-if="key === 'btc_dominance'" :value="metric.value" size="75px" :thickness="0.40"
@@ -10,10 +10,10 @@
             </insightCard>
         </div>
         <div class="w-2/5 row">
-            <div class="col-6">
+            <div class="col-6 w-1/2">
                 <listCard :list="trendingList" color="cyan" />
             </div>
-            <div class="col-6">
+            <div class="col-6 w-1/2 q-pl-sm">
                 <listCard :list="gainersList" color="amber" />
             </div>
         </div>
