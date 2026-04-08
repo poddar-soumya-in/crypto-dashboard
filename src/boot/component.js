@@ -5,6 +5,11 @@ import insightCard from 'src/components/uiComponents/insightCard.vue';
 import listCard from 'src/components/uiComponents/listCard.vue';
 import marketTable from 'src/components/marketTable.vue';
 import lineChart from 'src/components/uiComponents/lineChart.vue';
+import coLineChart from 'src/components/uiComponents/coLineChart.vue';
+import plotChart from 'src/components/uiComponents/plotChart.vue';
+import pieChart from 'src/components/uiComponents/pieChart.vue';
+import histoGram from 'src/components/uiComponents/histoGram.vue';
+import uiCard from 'src/components/uiComponents/uiCard.vue';
 export default defineBoot(({ app }) => {
   app.component('globalInsights', globalInsights);
   app.component('marketExplorer', marketExplorer);
@@ -12,4 +17,9 @@ export default defineBoot(({ app }) => {
   app.component('listCard', listCard);
   app.component('marketTable', marketTable);
   app.component('lineChart', lineChart);
+  app.component('coLineChart', coLineChart);
+  app.component('plotChart', plotChart);
+  app.component('pieChart', pieChart);
+  app.component('histoGram', histoGram);
+  app.component('uiCard', uiCard);
 });

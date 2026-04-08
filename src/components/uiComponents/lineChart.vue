@@ -62,13 +62,13 @@ const options = {
 </script>
 
 <template>
-  <div style="height: 40px;">
+  <div id="line-chart" style="height: 40px;">
     <Line :data="chartData" :options="options" />
   </div>
 </template>
 
 <style>
-canvas {
+.line-chart canvas {
   width: 150px !important
 }
 </style>
