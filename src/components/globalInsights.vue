@@ -1,5 +1,5 @@
 <template>
-    <div class="row ">
+    <div v-if="!loading" class="row ">
         <div class="w-3/5 row q-col-gutter-sm q-pr-sm">
             <insightCard v-for="{ metric, key, color } in insightCards" :key="key" class="col-6" :metric="metric"
                 :color="color">
