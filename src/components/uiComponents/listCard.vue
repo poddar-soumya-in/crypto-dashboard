@@ -83,6 +83,7 @@ const formatPercentage = (val) => {
     box-shadow: none;
     min-width: 220px;
     border-width: 1.5px;
+    background-image: linear-gradient(to bottom right, #ffffff00, #f9fafb11);
 }
 
 .list-card:hover {

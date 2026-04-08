@@ -72,6 +72,7 @@ const trendConfig = {
     box-shadow: none;
     border-width: 1.5px;
     min-width: 250px;
+    background-image: linear-gradient(to bottom right, #ffffff00, #f9fafb11);
 }
 
 .insight-card:hover {

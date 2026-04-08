@@ -13,8 +13,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, provide } from 'vue'
 import layoutHeader from './Header.vue'
+
+const searchQuery = ref('')
+provide('searchQuery', searchQuery)
 
 const rightDrawerOpen = ref<boolean>(false)
 

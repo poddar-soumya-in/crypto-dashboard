@@ -1,12 +1,8 @@
 <template>
   <q-page class="column items-evenly justify-start">
-    <div class="full-width full-height column q-pa-md">
+    <div class="full-width full-height column q-pa-md q-col-gutter-y-sm">
       <globalInsights />
+      <marketExplorer />
     </div>
   </q-page>
 </template>
-
-<script setup lang="ts">
-import { ref } from 'vue';
-import globalInsights from 'src/components/globalInsights.vue';
-</script>

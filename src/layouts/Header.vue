@@ -1,16 +1,11 @@
 <script setup>
-import { ref, provide, watch } from 'vue'
+import { ref, inject } from 'vue'
 import { useQuasar } from 'quasar'
-import { debounce } from 'quasar'
 
 import logo from './../assets/img/logo.png'
 
 const $q = useQuasar()
-
-const searchQuery = ref('')
-const debouncedSearch = debounce(searchQuery, 300)
-
-provide('searchQuery', debouncedSearch)
+const searchQuery = inject('searchQuery')
 
 const isDark = ref($q.dark.isActive)
 
