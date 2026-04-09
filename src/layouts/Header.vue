@@ -62,9 +62,7 @@ const toggleLanguage = () => {
             <q-select dense outlined v-model="themeColor" :options="colorOptions" label="Theme" label-color="white" input-class="text-white" class="q-mr-md"
                 style="width: 140px" />
             <q-btn flat round :icon="isDark ? 'dark_mode' : 'light_mode'" @click="toggleTheme" class="q-mr-sm" />
-            <q-btn flat round label="EN/HI" @click="toggleLanguage" />
-            <q-btn flat round icon="more_vert" @click="$emit('toggleDrawer')"></q-btn>
-
+            <q-btn flat round label="EN/HI" @click="toggleLanguage" class="q-mr-sm" />
         </q-toolbar>
     </q-header>
 </template>
