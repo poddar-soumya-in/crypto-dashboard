@@ -23,7 +23,7 @@
             <div class="col-7">
                 <div class="row justify-between items-center q-mb-sm">
                     <div class="text-subtitle1">Price Trend</div>
-                    <q-btn-toggle v-model="range"s toggle-color="light-blue" :options="[
+                    <q-btn-toggle v-model="range" :toggle-color="themeColor" :options="[
                         { label: '1D', value: '1d' },
                         { label: '3D', value: '3d' },
                         { label: '7D', value: '7d' }
@@ -82,8 +82,10 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, nextTick } from 'vue'
+import { computed, ref, nextTick, inject } from 'vue'
 import { useCoinStore } from 'src/stores/coinStore'
+
+const themeColor = inject('themeColor', 'light-blue')
 
 const coinStore = useCoinStore()
 const coin = computed(() => coinStore.selectedCoin)

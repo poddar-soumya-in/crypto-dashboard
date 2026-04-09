@@ -34,6 +34,9 @@ import { useQuasar } from 'quasar'
 const searchQuery = ref('')
 provide('searchQuery', searchQuery)
 
+const themeColor = ref('light-blue')
+provide('themeColor', themeColor)
+
 const coinStore = useCoinStore()
 
 const rightDrawerOpen = ref(false)

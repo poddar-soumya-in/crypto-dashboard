@@ -1,15 +1,15 @@
 <template>
   <q-table :rows="coins" :columns="columns" row-key="id" :loading="loading" :grid="cardState" flat bordered
-    virtual-scroll color="light-blue" @row-click="onRowClick">
+    virtual-scroll :color="themeColor" @row-click="onRowClick">
     <template v-slot:top>
       <div class="row justify-between w-full">
-        <label class="text-lg font-medium q-mr-md"><span class="text-light-blue text-xl">#</span> Coin Market
+        <label class="text-lg font-medium q-mr-md"><span :class="`text-${themeColor} text-xl`">#</span> Coin Market
           Table</label>
         <div class="row items-end q-gutter-md">
-          <q-input color="light-blue" dense placeholder="Search coins..." v-model="searchQuery" />
-          <q-btn flat dense icon="filter_alt" color="light-blue" @click="filterDialog = true" />
-          <q-btn flat dense icon="restart_alt" color="light-blue" @click="resetFilter" />
-          <q-btn-toggle v-model="cardState" toggle-color="light-blue" unelevated size="sm"
+          <q-input :color="themeColor" dense placeholder="Search coins..." v-model="searchQuery" />
+          <q-btn flat dense icon="filter_alt" :color="themeColor" @click="filterDialog = true" />
+          <q-btn flat dense icon="restart_alt" :color="themeColor" @click="resetFilter" />
+          <q-btn-toggle v-model="cardState" toggle-:color="themeColor" unelevated size="sm"
             style="border: 1px solid lightgrey;" :options="[
               { icon: 'grid_view', value: true },
               { icon: 'list', value: false }
@@ -87,7 +87,7 @@
       <div class="full-width flex flex-center q-pa-lg">
         <q-card v-if="!loading" rounded class="column items-center justify-center q-pa-xl text-grey-7 relative w-full"
           style="min-width: 280px; max-width: 420px;">
-          <q-spinner color="light-blue" size="3em" :thickness="10" />
+          <q-spinner :color="themeColor" size="3em" :thickness="10" />
           <div class="text-h6 text-weight-medium q-mb-xs">
             Data Loading ...
           </div>
@@ -105,7 +105,7 @@
           <div class="text-body2 text-grey-5 text-center q-mb-md">
             Try adjusting your search or filters
           </div>
-          <q-btn flat color="light-blue" label="Reset Filters" @click="resetFilter()" />
+          <q-btn flat :color="themeColor" label="Reset Filters" @click="resetFilter()" />
         </q-card>
       </div>
     </template>
@@ -113,40 +113,42 @@
   <q-dialog v-model="filterDialog" persistent>
     <q-card rounded bordered class="q-pa-md text-grey-8 w-full filter-card">
       <div class="row items-center justify-between q-gutter-x-sm">
-        <div class="text-lg font-medium text-light-blue-8">Apply Filter</div>
+        <div :class="`text-lg font-medium text-${themeColor}-8`">Apply Filter</div>
         <q-icon name="close" color="grey" size="sm" @click="filterDialog = false" />
       </div>
       <q-separator spaced class="q-mt-sm q-mb-sm" />
       <div class="row items-center q-col-gutter-x-md q-mb-xl">
         <label class="col-4">Market Change: </label>
-        <q-select class="col-8" v-model="filterOptions.change" :options="changeOptions" dense color="light-blue" />
+        <q-select class="col-8" v-model="filterOptions.change" :options="changeOptions" dense :color="themeColor" />
       </div>
       <div class="row items-center q-col-gutter-x-md q-mb-xl">
         <label class="col-4">Market Cap Range: </label>
         <q-range class="col-8" v-model="filterOptions.marketCapRange" :min="marketCapRangeOption.min"
-          :max="marketCapRangeOption.max" :step="marketCapRangeOption.step" label color="light-blue" />
+          :max="marketCapRangeOption.max" :step="marketCapRangeOption.step" label :color="themeColor" />
       </div>
       <div class="row items-center q-col-gutter-x-md q-mb-xl">
         <label class="col-4">Volume Range: </label>
         <q-range class="col-8" v-model="filterOptions.volumeRange" :min="volumeRangeOption.min"
-          :max="volumeRangeOption.max" :step="volumeRangeOption.step" label color="light-blue" />
+          :max="volumeRangeOption.max" :step="volumeRangeOption.step" label :color="themeColor" />
       </div>
       <div class="row items-center q-col-gutter-x-md">
         <label class="col-4">Price Range: </label>
         <q-range class="col-8" v-model="filterOptions.priceRange" :min="priceRangeOption.min"
-          :max="priceRangeOption.max" :step="priceRangeOption.step" label color="light-blue" />
+          :max="priceRangeOption.max" :step="priceRangeOption.step" label :color="themeColor" />
       </div>
       <q-separator spaced class="q-mt-sm q-mb-sm" />
-      <q-btn unelevated label="Apply" color="light-blue-8" @click="applyFilter()" />
+      <q-btn unelevated label="Apply" :color="`${themeColor}-8`" @click="applyFilter()" />
     </q-card>
   </q-dialog>
 </template>
 
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue';
+import { computed, ref, watch, inject } from 'vue';
 import { debounce } from 'quasar'
 import { useCoinStore } from 'src/stores/coinStore'
 import { Coin } from 'src/types/coin';
+
+const themeColor = inject('themeColor', 'light-blue')
 
 const marketStore = useCoinStore()
 
