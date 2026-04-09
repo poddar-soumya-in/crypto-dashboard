@@ -10,6 +10,9 @@ import plotChart from 'src/components/uiComponents/plotChart.vue';
 import pieChart from 'src/components/uiComponents/pieChart.vue';
 import histoGram from 'src/components/uiComponents/histoGram.vue';
 import uiCard from 'src/components/uiComponents/uiCard.vue';
+import coinDetailDrawer from 'src/components/coinDetailDrawer.vue';
+import metric from 'src/components/uiComponents/metric.vue';
+import performanceChip from 'src/components/uiComponents/performanceChip.vue';
 export default defineBoot(({ app }) => {
   app.component('globalInsights', globalInsights);
   app.component('marketExplorer', marketExplorer);
@@ -22,4 +25,7 @@ export default defineBoot(({ app }) => {
   app.component('pieChart', pieChart);
   app.component('histoGram', histoGram);
   app.component('uiCard', uiCard);
+  app.component('coinDetailDrawer', coinDetailDrawer);
+  app.component('metric', metric);
+  app.component('performanceChip', performanceChip);
 });

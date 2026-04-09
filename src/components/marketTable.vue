@@ -1,6 +1,6 @@
 <template>
   <q-table :rows="coins" :columns="columns" row-key="id" :loading="loading" :grid="cardState" flat bordered
-    virtual-scroll color="light-blue">
+    virtual-scroll color="light-blue" @row-click="onRowClick">
     <template v-slot:top>
       <div class="row justify-between w-full">
         <label class="text-lg font-medium q-mr-md"><span class="text-light-blue text-xl">#</span> Coin Market
@@ -145,6 +145,14 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue';
 import { debounce } from 'quasar'
+import { useCoinStore } from 'src/stores/coinStore'
+import { Coin } from 'src/types/coin';
+
+const marketStore = useCoinStore()
+
+const onRowClick = (evt: Event, row:Coin) => {
+  marketStore.setSelectedCoin(row)
+}
 
 const props = defineProps<{
   coins: any[]
